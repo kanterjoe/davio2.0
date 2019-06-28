@@ -2,16 +2,21 @@
   "name": "davio_node",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3001/",
   "dependencies": {
-    "express": "4.17.1",
-    
-    "sequelize": "^5.8.9",
-    "sqlite3": "^4.0.8"
+    "axios": "^0.19.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.1",
+    "reactstrap": "8.0.0",
+    "redux": "4.0.1",
+    "redux-saga": "1.0.4"
   },
   "scripts": {
-    "start-server": "nodemon --ignore 'client/' server.js",
-    "start-client": "cd client && yarn start",
-    "install": "cd client && yarn install"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -27,5 +32,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  } 
+  }
 }

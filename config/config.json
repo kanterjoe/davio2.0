@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "root",
+    "database": "davio_development",
+    "storage": "./dev.db",
+    "dialect": "sqlite"
+  },
+  "test": {
+    "username": "root",
+    "password": "root",
+    "database": "davio_test",
+    "storage": "./test.db",
+    "dialect": "sqlite"
+  },
+  "production": {
+    "username": "root",
+    "password": "root",
+    "database": "davio_production",
+    "storage": "./prod.db",
+    "dialect": "sqlite"
+  }
+}
