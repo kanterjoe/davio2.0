@@ -11,3 +11,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* heavy rain background gradient */
+.heavy-rain, .App {
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #FFF 100%);}
+/* .morpheus-den, .App {
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+} */
+body{
+  
+}
+.App {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+}
