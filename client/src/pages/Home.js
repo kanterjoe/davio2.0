@@ -1,37 +1,46 @@
-import React, { useState, useEffect }from 'react';
-import {Row, Col, Jumbotron, Card, CardBody, CardTitle, CardDeck, CardText, Table} from 'reactstrap';
-import axios from 'axios';
+import React, {useState} from 'react';
+import {CardDeck, Button, Input, Form, Label, FormGroup} from 'reactstrap';
+import {SCENE} from '../redux/actionTypes'
 import SceneCard from '../components/SceneCard'
+import Shell from '../components/Shell'
+import {connect} from 'react-redux';
+/*
 
+            */
 const Home = props => {
-    const [state, setState] = useState({
-        scenes: []
-    })
-    useEffect(() => {
-        (async () => {
-            const {data: scenes} = await axios.get('/api/scene');
-        
-            setState({scenes});
-        })();
-    }, []);
+    const [scene, setScene] = useState({name:"", isCurrent:false});
+
+    const createScene = () => props.dispatch({type: SCENE.CREATE, payload: {...scene, Actions: []}})
+    
+    const updateName = event => setScene({...scene, name: event.target.value})
+    const updateIsCurrent = event => {setScene({...scene, isCurrent: event.target.checked}); console.log(event.target.checked)}
+
     return (
-    <>
-    <Row>
-        <Col md={12}>
-            <Jumbotron>
-                <h1>Welcome to Davio</h1>
-            </Jumbotron>
-        </Col>
-    </Row>
-    <Row>
-        <Col md={12}>
+        <Shell>
+            <div>
+                <Form>
+                    <FormGroup>
+                        <Input value={scene.name} onChange={updateName} name="name"/>
+                    </FormGroup>
+                    <FormGroup>
+                        <Input checked={scene.isCurrent} type="checkbox" onChange={updateIsCurrent} />
+                        <Label>Is Current?</Label>
+                    </FormGroup>
+                    <FormGroup>
+                        <Button onClick={createScene} >Create New Scene</Button>
+                    </FormGroup>
+                </Form>
+            </div>
             <CardDeck>
-                {state.scenes.map(scene => <SceneCard {...scene} key={scene.id}/>)}
+                {props.scenes.map((scene, i) => <SceneCard {...scene} key={i}/>)}
             </CardDeck>
-        </Col>
-    </Row>
-    </>
+        </Shell>
 )}
 
 
-export default Home;
+export default connect(
+    state => ({
+        scenes: state.Scene
+    }),
+    dispatch => ({ dispatch })
+) (Home);

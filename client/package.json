@@ -2,7 +2,7 @@
   "name": "davio_node",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001/",
+  "proxy": "http://localhost:4001/",
   "dependencies": {
     "axios": "^0.19.0",
     "react": "^16.8.6",
@@ -11,7 +11,8 @@
     "react-scripts": "3.0.1",
     "reactstrap": "8.0.0",
     "redux": "^4.0.1",
-    "redux-saga": "^1.0.4"
+    "redux-saga": "^1.0.4",
+    "uuid": "^3.3.2"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -5,10 +5,11 @@ import { Jumbotron, Card, CardBody, CardTitle, CardText, Table, Collapse, Button
 export default props => {
     const [collapsed, setCollapsed] = useState(true)
 
+    const style = {backgroundColor: props.isCurrent? "lightgreen": ""}
     return (
         <Card>
             <CardBody>
-                <CardTitle><Jumbotron className="primary">{props.name}</Jumbotron></CardTitle>
+                <CardTitle><Jumbotron style={style} className="primary">{props.name}</Jumbotron></CardTitle>
                 <CardText>
                     <Button outline onClick={() => setCollapsed(!collapsed)}>{collapsed? "":"Hide"} Actions </Button>
                 </CardText>

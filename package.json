@@ -4,7 +4,8 @@
   "private": true,
   "dependencies": {
     "express": "4.17.1",
-    
+    "redux": "^4.0.1",
+    "redux-saga": "^1.0.5",
     "sequelize": "^5.8.9",
     "sqlite3": "^4.0.8"
   },
@@ -27,5 +28,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  } 
+  }
 }
